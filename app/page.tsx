@@ -3,6 +3,7 @@ import styles from "./page.module.css";
 import { stripe } from "@/lib/stripe";
 import {Button} from '@/components/ui/button'
 import Link from "next/link";
+import Carousel from "@/components/carousel";
 
 export default async function Home() {
   const products = await stripe.products.list({
@@ -11,6 +12,8 @@ export default async function Home() {
   });
 
   return (
+    <section>
+
     <div className="flex outline-gray-300 border  items-center justify-center min-h-[80vh] text-center p-8 bg-white dark:bg-gray-950">
       <div>
          <h1 className="text-5xl md:text-6xl font-semibold mb-6 text-gray-900 dark:text-gray-100 tracking-tight">
@@ -34,6 +37,8 @@ export default async function Home() {
       height={350}
       src={products.data[0].images[0]}/>
     </div>
+    <Carousel products={products.data} />
+    </section>
   );
 }
 
