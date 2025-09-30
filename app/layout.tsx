@@ -30,7 +30,7 @@ export default function RootLayout({
        <div>
          <Navbar/>
        </div>
-        <main>
+        <main className="w-[80%] mx-auto p-4">
 
         {children}
         </main>

@@ -11,8 +11,9 @@ export default async function Home() {
   });
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-[80vh] text-center px-4 bg-white dark:bg-gray-950">
-      <h1 className="text-5xl md:text-6xl font-semibold mb-6 text-gray-900 dark:text-gray-100 tracking-tight">
+    <div className="flex outline-gray-300 border  items-center justify-center min-h-[80vh] text-center p-8 bg-white dark:bg-gray-950">
+      <div>
+         <h1 className="text-5xl md:text-6xl font-semibold mb-6 text-gray-900 dark:text-gray-100 tracking-tight">
         Modern Shopping, <br />
         <span className="text-gray-600 dark:text-gray-400">Simplified</span>
       </h1>
@@ -24,6 +25,14 @@ export default async function Home() {
           Browse Collection
         </Link>
       </Button>
+      </div>
+   
+      
+      <Image
+      alt="image"
+      width={350} 
+      height={350}
+      src={products.data[0].images[0]}/>
     </div>
   );
 }
